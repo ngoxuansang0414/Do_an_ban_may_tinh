@@ -46,11 +46,11 @@
               <div class="card">
                 <div id="headingOne" class="card-header bg-white shadow-sm border-0">
                   <h6 class="mb-0 font-weight-bold"><a href="#" data-toggle="collapse" data-target="#collapseOne"
-                      aria-expanded="false" aria-controls="collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne"
                       class="d-block position-relative text-dark text-uppercase collapsible-link py-2">Chứng nhận/Canh
                       tác</a></h6>
                 </div>
-                <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse">
+                <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse show">
                   <div class="card-body p-5">
                     <p class="font-weight-light m-0">{{description.certification}}</p>
                   </div>
@@ -73,19 +73,7 @@
               </div>
 
               <!-- Accordion item 3 -->
-              <div class="card">
-                <div id="headingThree" class="card-header bg-white shadow-sm border-0">
-                  <h6 class="mb-0 font-weight-bold"><a href="#" data-toggle="collapse" data-target="#collapseThree"
-                      aria-expanded="false" aria-controls="collapseThree"
-                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">Công
-                      dụng</a></h6>
-                </div>
-                <div id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample" class="collapse">
-                  <div class="card-body p-5">
-                    <p class="font-weight-light m-0">{{description.uses}}</p>
-                  </div>
-                </div>
-              </div>
+              
 
               <!-- Accordion item 4 -->
               <div class="card">
@@ -97,7 +85,7 @@
                 </div>
                 <div id="collapseFour" aria-labelledby="headingFour" data-parent="#accordionExample" class="collapse">
                   <div class="card-body p-5">
-                    <p class="font-weight-light m-0">{{description.instructions_for_use}}</p>
+                    <p class="font-weight-light m-0">{{description.instructions_for_use|linebreaks}}</p>
                   </div>
                 </div>
               </div>
@@ -112,8 +100,7 @@
                 </div>
                 <div id="collapseFive" aria-labelledby="headingFive" data-parent="#accordionExample" class="collapse">
                   <div class="card-body p-5">
-                    <p class="font-weight-light m-0">{{description.preserving_instruction}}</p>
-                  </div>
+                    
                 </div>
               </div>
 
@@ -193,9 +180,9 @@
 
         <div class="col-md-12">
           <p>
-            <p class="date text-muted float-md-right">{{ review.updated_at|localtime|order_date }}</p>
-            <h5><strong>{{ review.user.name }}</strong></h5>
-            
+          <p class="date text-muted float-md-right">{{ review.updated_at|localtime|order_date }}</p>
+          <h5><strong>{{ review.user.name }}</strong></h5>
+
           </p>
           <p>
             <span class="float-left">{% if review.rating >= 1 %}<i class="text-warning fa fa-star"></i>{% endif %}</span>
@@ -206,10 +193,10 @@
           </p>
           <br>
           <p>
-            <h6 class="float-left" href="#"><strong>{{ review.subject }}</strong></h6>
-            
+          <h6 class="float-left" href="#"><strong>{{ review.subject }}</strong></h6>
+
           </p>
-          
+
           <div class="clearfix"></div>
           <p>{{ review.review }}</p>
 
@@ -219,6 +206,10 @@
   </div>
 </div>
 {% endfor %}
+
+
+
+
 
 
 
